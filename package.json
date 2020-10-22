@@ -1,0 +1,20 @@
+{
+  "name": "lekzen-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klodeijs/lekzen-discord-bot.git"
+  },
+  "keywords": [],
+  "author": "Husky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klodeijs/lekzen-discord-bot/issues"
+  },
+  "homepage": "https://github.com/klodeijs/lekzen-discord-bot#readme",
+  "dependencies": {
+    "discord.js": "*",
+    "regex": "*"
+  }
+}
