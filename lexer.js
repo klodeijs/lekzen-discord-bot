@@ -103,9 +103,7 @@ module.exports = {
             if (NumberDef.test(item)){
                 tokenz.push(new_token("NUMBER",convertFromVexenNumeral(item)));
                 return;
-            }
-
-            if (/\w{3,}/g.test(item)){
+            }else if (/\w{3,}/g.test(item)){
                 if (index > 0 && index < tokenzPre.length - 1 && tokenzPre[index-1] == "/" && tokenzPre[index+1] == "/"){
                     tokenz.push(new_token("STRING",item));
                     return;
@@ -117,9 +115,17 @@ module.exports = {
                     tokenz.push(new_token("IDENTIFIER",item));
                     return;
                 }
+            } else if (/[<>]/g.test(item)){
+                tokenz.push(new_token("COMPARE",item));
+                return;
+            } else if (/[\+-\.=]/g.test(item)){
+                tokenz.push(new_token("OPERATOR",item));
+                return;
+            } else {
+                tokenz.push(new_token(item,item));
+                return;
             }
 
-            tokenz.push(new_token(item,item));
         })
 
         return tokenz;
